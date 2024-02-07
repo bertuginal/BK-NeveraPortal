@@ -1,0 +1,32 @@
+﻿@using NonFactors.Mvc.Grid;
+@{
+	Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<NeveraPortal.UI.Areas.Admin.Models.AdminUser.IndexAdminUserVM>
+
+<h1>AdminUsers</h1>
+
+<div class="d-flex justify-content-end">
+	<a class="btn btn-success my-2" href="/admin/adminuser/create">Create AdminUser</a>
+</div>
+
+<form action="/admin/adminuser" method="post">
+
+	@Html.AntiForgeryToken()
+	@(Html
+		.Grid(Model)
+		.Build(columns =>
+		{
+
+			columns.Add(model => model.Id).Titled("Id");
+			columns.Add(model => model.EMail).Titled("EMail");
+			columns.Add(model => $"<a class=\"btn btn-primary\"  href=\"/admin/adminuser/edit/{model.Id}\">Update</a>").Encoded(false);
+			columns.Add(model => $"<a class=\"btn btn-danger\" href=\"/admin/adminuser/delete/{model.Id}\">Delete</a>").Encoded(false);
+
+
+
+		})
+		)
+
+</form>

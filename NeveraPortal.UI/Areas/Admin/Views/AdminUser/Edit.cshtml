@@ -1,0 +1,52 @@
+﻿@model NeveraPortal.UI.Areas.Admin.Models.AdminUser.EditAdminUserVM
+@{
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h1>Edit User</h1>
+
+<hr />
+
+<form method="post" asp-action="Edit" asp-controller="AdminUser" id="createForm">
+    <input type="hidden" asp-for="Id" />
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label class="control-label">EMail</label>
+        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Password</label>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">ConfirmPassword</label>
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="button" class="btn btn-secondary" onclick="cancel()">Cancel</button>
+</form>
+
+<script>
+    function cancel() {
+        history.back();
+    }
+</script>
