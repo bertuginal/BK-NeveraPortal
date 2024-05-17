@@ -11,16 +11,18 @@
 ## :star: Neler yapıldı?
 - .Net Core teknolojisi kullanılarak "Business Logic Layer(BLL), Data Access Layer(DAL) ve User Interface(UI)" katmanları ile Web API oluşturuldu. 
 
-- Bilet satan bir web sitesinin verileri çekilerek bir repo oluşturuldu.
+- Web sitesinde Admin user kaydı yapıldı ve bir Admin Dashboard oluşturuldu. 
 
-- Boostrap kullanılarak front-end alanında bir UI oluşturuldu ve çekilen veriler kullanıcıya gösterildi.
+- Admin tarafından Dashboard da görüleceği Company, Country, City, Category ve Blog modelleri oluşturuldu. 
+
+- Boostrap kullanılarak front-end alanında bir UI oluşturuldu ve Dashboard admin user'a gösterildi.
 
 ## :warning: Hangi Teknolojiler Kullanıldı?
 
 - [.Net Core](https://dotnet.microsoft.com/en-us/)
 - [C#](https://learn.microsoft.com/en-us/dotnet/csharp/)
 - [Bootstrap](https://getbootstrap.com)
-- [Firebase](https://firebase.google.com)
+- [MSSQL](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ## 🚀&nbsp; Aşağıdaki yönlendirmeler ile projemi indirebilirsiniz!
 1. CMD istemcisini aç!
